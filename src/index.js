@@ -8,7 +8,7 @@ function App() {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <View style={styles.container}>
-          <Text>Emerson</Text>
+          <Text>List of repositories</Text>
         </View>
       </SafeAreaView>
     </>
