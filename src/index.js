@@ -4,13 +4,24 @@ import api from './services/api';
 import axios from 'axios';
 
 function App() {
-  useEffect(() => {}, []);
+  const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://192.168.15.114:3333/repositories')
+      .then((response) => setResult(response.data));
+    console.log(result);
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <View style={styles.container}>
           <Text>List of repositories</Text>
+          {result.map((data) => (
+            <Text> {data.title}</Text>
+          ))}
         </View>
       </SafeAreaView>
     </>
