@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {SafeAreaView, Text, StatusBar, StyleSheet, View} from 'react-native';
 import api from './services/api';
+import axios from 'axios';
 
 function App() {
+  useEffect(() => {}, []);
   return (
     <>
       <StatusBar barStyle="dark-content" />
