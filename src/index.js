@@ -1,5 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {SafeAreaView, Text, StatusBar, StyleSheet, View} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  StatusBar,
+  StyleSheet,
+  View,
+  Image,
+} from 'react-native';
 import api from './services/api';
 import axios from 'axios';
 
@@ -10,7 +17,6 @@ function App() {
     axios
       .get('http://192.168.15.114:3333/repositories')
       .then((response) => setResult(response.data));
-    console.log(result);
   }, []);
 
   return (
@@ -20,7 +26,7 @@ function App() {
         <View style={styles.container}>
           <Text>List of repositories</Text>
           {result.map((data) => (
-            <Text> {data.title}</Text>
+            <Text key={data.id}> {data.title}</Text>
           ))}
         </View>
       </SafeAreaView>
